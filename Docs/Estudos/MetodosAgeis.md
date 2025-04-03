@@ -57,7 +57,7 @@ Esses valores, junto com os princípios, formam a base para todas as metodologia
 
 O **Scrum** é um framework ágil amplamente utilizado para organizar e otimizar o trabalho das equipes. Ele se baseia em ciclos curtos e iterativos chamados **Sprints**, onde cada entrega busca agregar valor ao produto final.
 
-[![Processo Scrum](SistemaScrum.png)]()
+![Processo Scrum](https://github.com/unb-mds/2025-1-Squad06/blob/main/Docs/Estudos/Imagens/SistemaScrum.png)
 ### Como o Scrum Funciona?
 
 O Scrum organiza o trabalho em ciclos curtos chamados **Sprints**, que geralmente duram de 1 a 4 semanas. Durante cada Sprint, a equipe trabalha em um conjunto de tarefas priorizadas do **Product Backlog**, entregando incrementos funcionais ao final do ciclo. 
