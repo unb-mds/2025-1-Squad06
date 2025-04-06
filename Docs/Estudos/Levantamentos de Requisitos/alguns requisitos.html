@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome file</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="🗳️-requisitos-do-projeto">🗳️ Requisitos do Projeto</h1>
+<h2 id="sistema-de-votação-presencial-com-rede-local-udp">Sistema de Votação Presencial com Rede Local (UDP)</h2>
+<hr>
+<h2 id="requisitos-funcionais-rf">1. Requisitos Funcionais (RF)</h2>
+<ul>
+<li>RF01. O sistema deve permitir que um HOST defina e envie perguntas de votação.</li>
+<li>RF02. Os CLIENTES devem receber as perguntas automaticamente via rede local (UDP Broadcast).</li>
+<li>RF03. Os CLIENTES devem exibir a pergunta para o usuário escolher uma das opções: A Favor, Contra, Abstenção.</li>
+<li>RF04. O CLIENTE deve enviar o voto ao HOST via UDP unicast.</li>
+<li>RF05. O HOST deve contabilizar votos recebidos por tipo.</li>
+<li>RF06. O HOST deve exibir os resultados em tempo real.</li>
+<li>RF07. O HOST deve encerrar a votação manualmente (por comando ou tecla).</li>
+<li>RF08. O sistema deve exibir os resultados finais com total por opção.</li>
+<li>RF09. O sistema deve permitir múltiplas rodadas de votação.</li>
+</ul>
+<hr>
+<h2 id="requisitos-não-funcionais-rnf">2. Requisitos Não Funcionais (RNF)</h2>
+<ul>
+<li>RNF01. O sistema deve funcionar em rede local sem necessidade de acesso à internet.</li>
+<li>RNF02. A comunicação entre dispositivos deve utilizar o protocolo UDP.</li>
+<li>RNF03. O tempo de resposta entre envio e recebimento de voto deve ser inferior a 1 segundo.</li>
+<li>RNF04. A interface deve ser simples e acessível, podendo rodar via terminal.</li>
+<li>RNF05. O sistema deve ser compatível com Python 3.x.</li>
+<li>RNF06. O sistema deve rodar em ambientes com recursos limitados (ex: Pydroid no Android).</li>
+<li>RNF07. O código-fonte deve ser open source, com comentários e documentação básica.</li>
+</ul>
+<hr>
+<h2 id="requisitos-de-teste-rt">3. Requisitos de Teste (RT)</h2>
+<ul>
+<li>RT01. Testar envio de pergunta e recepção em múltiplos clientes conectados.</li>
+<li>RT02. Testar envio de votos simultâneos e verificação de contagem correta.</li>
+<li>RT03. Testar falha de cliente (desligar um cliente) e estabilidade do sistema.</li>
+<li>RT04. Testar latência de comunicação em diferentes distâncias da rede Wi-Fi.</li>
+<li>RT05. Testar compatibilidade com terminal, Windows, Linux e Android (via Pydroid).</li>
+<li>RT06. Testar bloqueio de votação após finalização pelo HOST.</li>
+</ul>
+<hr>
+<h2 id="requisitos-técnicos-rtec">4. Requisitos Técnicos (RTec)</h2>
+<ul>
+<li>Linguagem: Python 3.x</li>
+<li>Protocolos: UDP (Broadcast e Unicast)</li>
+<li>Bibliotecas sugeridas: socket, threading, tkinter (se GUI), Flask (para futura versão web)</li>
+<li>Ambiente mínimo: Dispositivos conectados à mesma rede local (Wi-Fi ou LAN)</li>
+<li>Compatibilidade:
+<ul>
+<li>Computadores (Windows/Linux/macOS)</li>
+<li>Celulares Android (via Pydroid 3)</li>
+<li>Navegadores (em versão Web)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="extras-futuramente-implementáveis">5. Extras Futuramente Implementáveis</h2>
+<ul>
+<li>Criptografia das mensagens para maior segurança.</li>
+<li>Identificação por nome ou ID do votante.</li>
+<li>Armazenamento dos resultados em banco de dados local (SQLite).</li>
+<li>Adaptação para interface web com Flask (permite uso em celulares via navegador).</li>
+</ul>
+</div>
+</body>
+
+</html>
