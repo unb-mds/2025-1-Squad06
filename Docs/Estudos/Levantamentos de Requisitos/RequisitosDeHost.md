@@ -59,3 +59,8 @@ Hospedar uma aplicação de votação local que funcione em redes internas, com 
 
 ---
 
+## 🛠️ Requisitos de Testes / Diagnóstico
+- Modo de teste da rede: simula envio e recebimento de pacotes via UDP.
+- Log de erro com mensagens compreensíveis. **(importante)**
+- Feedback visual para o usuário em caso de falha (ex: “Conexão perdida com o master”).
+
