@@ -69,3 +69,10 @@ Hospedar uma aplicação de votação local que funcione em redes internas, com 
  
  ---
 
+## 🔧 Facilidade de Instalação e Execução
+- Aplicação deve rodar com um único comando/script.
+- Requisitos de instalação documentados.
+- Instalação local simples, sem necessidade de serviços externos.
+- Deve ser possível atualizar o sistema sem reiniciar toda a rede.
+- As atualizações devem ser simples.
+---
