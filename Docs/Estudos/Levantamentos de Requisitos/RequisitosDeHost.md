@@ -56,6 +56,9 @@ Hospedar uma aplicação de votação local que funcione em redes internas, com 
   - ⚪ Abstenção
 - Visualização de resultados em tempo real **(importante)**
 - Armazenamento local das votações realizadas **(importante)**
+- Visualização do status dos dispositivos conectados.
+- Número de votos recebidos e aguardados.
+- Identificação de dispositivos que perderam conexão.
 
 ---
 
@@ -63,4 +66,6 @@ Hospedar uma aplicação de votação local que funcione em redes internas, com 
 - Modo de teste da rede: simula envio e recebimento de pacotes via UDP.
 - Log de erro com mensagens compreensíveis. **(importante)**
 - Feedback visual para o usuário em caso de falha (ex: “Conexão perdida com o master”).
+ 
+ ---
 
