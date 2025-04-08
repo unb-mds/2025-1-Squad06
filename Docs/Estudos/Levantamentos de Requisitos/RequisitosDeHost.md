@@ -47,18 +47,119 @@ Hospedar uma aplicação de votação local que funcione em redes internas, com 
 
 ---
 
-## 🧰 Funcionalidades Esperadas
+# 🧰 Funcionalidades Esperadas com Tecnologias Sugeridas
 
-- Envio de perguntas e controle da votação **(importante)**
-- Registro de votos com três opções:
-  - ✅ A favor
-  - ❌ Contra
-  - ⚪ Abstenção
-- Visualização de resultados em tempo real **(importante)**
-- Armazenamento local das votações realizadas **(importante)**
-- Visualização do status dos dispositivos conectados.
-- Número de votos recebidos e aguardados.
-- Identificação de dispositivos que perderam conexão.
+## Funcionalidades principais
+
+---
+
+### 🔹 Início do sistema como HOST (mestre da votação) **(importante)**  
+**Tecnologias sugeridas:**  
+- Backend: Python (`socket`, `threading`), Node.js (`dgram`)  
+- Interface: Tkinter, Electron, PyQt5, React
+
+---
+
+### 🔹 Definição da pergunta a ser votada via interface do HOST **(importante)**  
+**Tecnologias sugeridas:**  
+- Frontend: React, Tkinter, Flutter  
+- Armazenamento opcional: SQLite (registro local)
+
+---
+
+### 🔹 Envio da pergunta para todos os dispositivos via UDP broadcast **(importante)**  
+**Tecnologias sugeridas:**  
+- Python (`socket.sendto` com `broadcast`)  
+- Node.js (`dgram` com `socket.setBroadcast(true)`)
+
+---
+
+### 🔹 Recebimento automático da pergunta nos dispositivos CLIENTES  
+**Tecnologias sugeridas:**  
+- Python (`socket.recvfrom`)  
+- Node.js (`dgram.on('message')`)  
+- Interface: React Native, Electron, PyQt5
+
+---
+
+### 🔹 Interface de votação com três opções:  
+- ✅ A favor  
+- ❌ Contra  
+- ⚪ Abstenção  
+**Tecnologias sugeridas:**  
+- UI: React, Flutter, HTML+JS, Tkinter  
+- Lógica de envio: Python ou JS para UDP unicast
+
+---
+
+### 🔹 Envio do voto via UDP unicast diretamente ao HOST **(importante)**  
+**Tecnologias sugeridas:**  
+- Python (`socket.sendto` com IP do HOST)  
+- Node.js (`dgram.send` com IP do HOST)
+
+---
+
+### 🔹 Recebimento, validação e contagem de votos no HOST em tempo real **(importante)**  
+**Tecnologias sugeridas:**  
+- Backend: Python com `threading` para escuta contínua  
+- Armazenamento temporário: dicionário em memória, ou SQLite
+
+---
+
+### 🔹 Visualização de resultados parciais conforme os votos chegam **(importante)**  
+**Tecnologias sugeridas:**  
+- Interface: React + Chart.js, Tkinter com `matplotlib`, Electron
+
+---
+
+### 🔹 Encerramento manual da votação pelo HOST  
+**Tecnologias sugeridas:**  
+- CLI: `input()` no Python  
+- GUI: Botão em interface React, Flutter, Tkinter
+
+---
+
+### 🔹 Exibição do resultado final com contagem por opção **(importante)**  
+**Tecnologias sugeridas:**  
+- Interface: React, Tkinter, PyQt5  
+- Visualização: gráfico ou tabela (Chart.js, `matplotlib`)
+
+---
+
+### 🔹 Possibilidade de iniciar nova rodada de votação  
+**Tecnologias sugeridas:**  
+- Reset automático das variáveis do sistema  
+- Botão "Nova Votação" na interface (React, Tkinter)
+
+---
+
+### 🔹 Armazenamento local das votações realizadas **(importante)**  
+**Tecnologias sugeridas:**  
+- SQLite, JSON local, ou arquivos `.csv`  
+- Backend em Python, Node.js, ou Dart (Flutter)
+
+---
+
+### 🔹 Visualização do status dos dispositivos conectados  
+**Tecnologias sugeridas:**  
+- Registro de IPs de votos recebidos  
+- Ping UDP ou heartbeat periódicos
+
+---
+
+### 🔹 Número de votos recebidos e aguardados  
+**Tecnologias sugeridas:**  
+- Interface dinâmica que mostra contagem total esperada  
+- Estimativa baseada em número de dispositivos detectados
+
+---
+
+### 🔹 Identificação de dispositivos que perderam conexão  
+**Tecnologias sugeridas:**  
+- Heartbeat UDP periódico dos CLIENTES  
+- Timeout para considerar desconexão
+
+---
 
 ---
 
