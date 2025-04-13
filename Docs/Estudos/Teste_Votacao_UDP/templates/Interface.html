@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Votação Presencial</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Votação Presencial</h1>
+    <p id="question">Aguardando a questão...</p>
+    <button onclick="sendVote('a_favor')">A Favor</button>
+    <button onclick="sendVote('contra')">Contra</button>
+    <button onclick="sendVote('abstencao')">Abster-se</button>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    const server = "http://127.0.0.1:8000/"; // Substitua pelo IP do servidor
+    const userId = localStorage.getItem("userId") || Math.random().toString(36).substr(2, 9);
+    localStorage.setItem("userId", userId);
+
+    async function fetchQuestion() {
+      const response = await fetch(`${server}/results`);
+      const data = await response.json();
+      document.getElementById("question").innerText = data.question || "Aguardando a questão...";
+    }
+
+    async function sendVote(vote) {
+      const udpMessage = `${userId}:${vote}`;
+      alert(`Seu voto foi enviado: ${udpMessage}`);
+      document.getElementById("status").innerText = "Voto registrado!";
+    }
+
+    // Atualizar a questão a cada 5 segundos
+    setInterval(fetchQuestion, 5000);
+    fetchQuestion();
+  </script>
+</body>
+</html>
