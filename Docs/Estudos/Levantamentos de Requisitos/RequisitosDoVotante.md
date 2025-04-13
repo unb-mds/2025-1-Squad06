@@ -87,3 +87,9 @@ Tudo deve funcionar via rede local, sem precisar de internet externa.
 - Sem dependências de APIs externas
 
 ---
+
+### 🔹 Histórico local básico
+**Descrição:**
+O usuário pode ver um pequeno histórico local que mostra as perguntas já votadas e qual foi o seu voto correspondente em cada pergunta.
+
+---
