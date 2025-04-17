@@ -46,4 +46,4 @@ Já o UDP é um protocolo sem conexão, usado para transmitir pacotes de dados d
 
 ## Referências
 
-["Flask Python: o que é e como funciona?"](https://www.locaweb.com.br/blog/temas/codigo-aberto/flask-phyton-o-que-e/)ss
+["Flask Python: o que é e como funciona?"](https://www.locaweb.com.br/blog/temas/codigo-aberto/flask-phyton-o-que-e/)
