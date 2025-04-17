@@ -44,10 +44,12 @@ Cada parte da aplicação pode ser tratada de forma modular, tornando o código 
 - **Escalabilidade**: O Django é altamente escalável, capaz de lidar com grandes volumes de tráfego e dados. Grandes sites como Instagram e Pinterest o utilizam devido à sua capacidade de crescer conforme a demanda.
 - **Comunidade**: O Django tem uma comunidade ativa e uma grande quantidade de pacotes e bibliotecas que estendem suas funcionalidades. Isso significa que você pode encontrar soluções para muitos problemas sem precisar reinventar a roda.
 - **Documentação**: O Django é bem documentado e possui um tutorial oficial detalhado que pode ajudar qualquer desenvolvedor a começar a trabalhar rapidamente.
+- O Django é uma excelente escolha como backend para aplicações mobile, especialmente por sua robustez, segurança e rapidez no desenvolvimento. Com o auxílio do Django REST Framework (DRF), é possível criar APIs completas e seguras que se comunicam facilmente com apps desenvolvidos em Flutter, React Native, Kotlin, entre outros. Além disso, oferece uma interface administrativa pronta, escalabilidade e suporte a funcionalidades como autenticação, cache, e até WebSockets (com Django Channels). No entanto, Django não é utilizado para criar a interface visual dos apps, nem gera arquivos instaláveis como APKs, funcionando apenas como servidor. Também depende de conexão com a internet e requer integrações externas para recursos como notificações push. Por isso, é ideal para apps que precisam de backend online, **mas não é indicado para aplicações que funcionam totalmente offline ou baseadas em redes locais/UDP**.
 
 ## Conclusão
 
 O Django é uma das ferramentas mais poderosas e utilizadas para o desenvolvimento web com Python. Sua estrutura robusta, segurança embutida e capacidade de automação tornam o processo de criação de aplicações web muito mais eficiente. Se você está desenvolvendo uma aplicação web em Python, o Django é definitivamente uma excelente escolha para o backend.
+
 
 ---
 
