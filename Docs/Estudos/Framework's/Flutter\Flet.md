@@ -34,11 +34,23 @@ Flutter pode ser facilmente integrado com serviços da AWS por meio do **AWS Amp
 - Análises
 
 O Amplify Flutter atua como ponte entre o front-end feito em Flutter e os serviços de back-end da AWS, facilitando o desenvolvimento de aplicações escaláveis e robustas.
+## O que é Flet?
 
+**Flet** é uma ferramenta que permite aos desenvolvedores criar interfaces Flutter usando linguagens de programação mais populares entre back-end developers, como **Python**, **C#**, e **Go** — sem precisar escrever código em Dart.
+
+Com o Flet, o código da interface roda no servidor, enquanto o app Flutter atua como cliente e renderiza a interface. Isso permite um desenvolvimento mais rápido e familiar para quem já domina essas linguagens.
+
+### Vantagens do Flet:
+- Permite usar Flutter sem aprender Dart.
+- Ideal para prototipagem rápida e integrações com sistemas existentes.
+- Facilita a criação de aplicações web e desktop com interfaces modernas usando apenas Python, por exemplo.
+- Ótimo para desenvolvedores back-end que querem entregar front-ends funcionais com o poder do Flutter.
 ## Conclusão
 
 Flutter é uma ferramenta moderna, eficiente e poderosa para desenvolver aplicações multiplataforma com uma interface rica e consistente. Com uma base de código única, é possível entregar produtos de qualidade com economia de tempo e recursos.
-
+Já o Flet amplia as possibilidades ao permitir que mais desenvolvedores, mesmo sem experiência com Dart, possam usar o poder do Flutter em seus projetos, tornando o ecossistema ainda mais acessível e produtivo.
 ### Fontes:
 - [O que é Flutter? – Coodesh](https://coodesh.com/blog/dicionario/o-que-e-flutter/)
 - [O que é Flutter? – AWS](https://aws.amazon.com/pt/what-is/flutter/)
+- [Flet.dev](https://flet.dev)
+- [Vídeo Prático](https://www.youtube.com/watch?v=GSRg2EHyhZs)
