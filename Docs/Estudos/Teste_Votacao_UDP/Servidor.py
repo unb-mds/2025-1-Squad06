@@ -72,9 +72,17 @@ def handle_udp():
             udp_server.sendto("Erro no processamento do voto.".encode("utf-8"), addr)
 
 # Rotas HTTP
-@app.route("/")
+
 def index():
     return send_from_directory(os.getcwd(), "Interface.html")
+
+@app.route("/admin-login", methods=["POST"])
+def admin_login():
+    data = request.json
+    senha = data.get("senha")
+    if senha == "admin123":
+        return jsonify({"auth": True})
+    return jsonify({"auth": False}), 401
 
 @app.route("/question", methods=["POST"])
 def set_question():
