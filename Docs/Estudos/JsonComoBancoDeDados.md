@@ -25,7 +25,7 @@ o json vai muito além do javascript e se tornou formatação independente de li
 ```
 
 ## Json em Python
-Python tem uma biblioteca chamada json, que como o nome indica serve para tratar dados com base nessa formatação, como visto no exemplo acima a formatação do json
+Python tem uma biblioteca chamada json, que como o nome indica serve para tratar dados com essa formatação, como visto no exemplo acima a formatação do json
 se assemelha muito ao dicionário em python, e os arrays representados por '[]' se assemelham muito as listas.
 
 ### principais funções da biblioteca json
