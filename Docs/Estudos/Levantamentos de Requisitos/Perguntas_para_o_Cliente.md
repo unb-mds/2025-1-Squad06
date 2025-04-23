@@ -93,7 +93,7 @@ Resposta: Não obrigatoriamente, apenas exibir os resultados na tela do HOST já
 
 ## 8. Link do UserFlow (Miro)
 
-[Miro](https://miro.com/app/board/uXjVIJOVs_Y=/?utm_source=notification&utm_medium=email&utm_campaign=daily-updates&utm_content=view-activity&lid=8hnc0q4xt65k)
+[Documento User Flow no Miro](https://miro.com/app/board/uXjVIJOVs_Y=/?utm_source=notification&utm_medium=email&utm_campaign=daily-updates&utm_content=view-activity&lid=8hnc0q4xt65k)
 
 
 ## 9. Possíveis telas
