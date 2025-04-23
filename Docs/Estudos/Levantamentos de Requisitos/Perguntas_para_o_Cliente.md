@@ -91,8 +91,12 @@ Resposta: Não é necessário inicialmente, mas pode ser considerado no futuro.
 **7.1** O sistema precisa salvar os resultados?  
 Resposta: Não obrigatoriamente, apenas exibir os resultados na tela do HOST já é suficiente.
 
+## 8. Link do UserFlow (Miro)
 
-## 8. Possíveis telas
+[Miro](https://miro.com/app/board/uXjVIJOVs_Y=/?utm_source=notification&utm_medium=email&utm_campaign=daily-updates&utm_content=view-activity&lid=8hnc0q4xt65k)
+
+
+## 9. Possíveis telas
 
 
 
