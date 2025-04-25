@@ -1,6 +1,9 @@
 #Foi adicionado criptografia e correção de contagem de votação
-
-
+'''Como Funciona?
+Agora, quando um usuário envia um voto, o sistema cria um hash do seu user_id e o armazena. 
+Isso impede que o mesmo usuário vote mais de uma vez, mas sem armazenar o ID real, garantindo anonimato.
+Como o hash é irreversível, mesmo que você tenha acesso ao banco de dados, não será possível determinar qual usuário votou.
+'''
 
 import json
 import socket

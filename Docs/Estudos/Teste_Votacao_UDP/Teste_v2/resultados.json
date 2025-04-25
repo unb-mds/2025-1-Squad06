@@ -1,9 +1,9 @@
 {
     "perguntas": [
         {
-            "question": "Qual opini\u00e3o sobre o projeto x?",
+            "question": "Qual opinião sobre o projeto x?",
             "results": {
-                "a_favor": 1,
+                "a_favor": 0,
                 "contra": 0,
                 "abstencao": 0
             }
