@@ -1,101 +1,85 @@
-#Foi adicionado criptografia e correção de contagem de votação
-'''Como Funciona?
-Agora, quando um usuário envia um voto, o sistema cria um hash do seu user_id e o armazena. 
-Isso impede que o mesmo usuário vote mais de uma vez, mas sem armazenar o ID real, garantindo anonimato.
-Como o hash é irreversível, mesmo que você tenha acesso ao banco de dados, não será possível determinar qual usuário votou.
-'''
-
-import json
 import socket
+from collections import defaultdict
+import json
+from datetime import datetime
 import os
-import hashlib  # Importação para funções de hash, usada para anonimizar IDs de usuários (criptografia)
-from flask import Flask, render_template, request, jsonify
 
-# Configurações do servidor
-HOST = '127.0.0.1'
-UDP_PORT = 5005
-HTTP_PORT = 8000
-resultados_file = 'resultados.json'
+ARQUIVO_VOTOS = 'votos.json'
 
-# Estruturas de dados
-votos = {'a_favor': 0, 'contra': 0, 'abstencao': 0}
-perguntas = []
-votantes = set()  # Para armazenar os hashes dos IDs dos votantes
-
-# Função para salvar os resultados no arquivo JSON
-def salvar_resultados():
-    with open(resultados_file, 'w') as f:
-        json.dump({'perguntas': perguntas}, f, indent=4)
-
-# Carregar resultados do arquivo
-def carregar_resultados():
-    if os.path.exists(resultados_file):
-        with open(resultados_file, 'r') as f:
-            data = json.load(f)
-            return data.get('perguntas', [])
-    return []
-
-# Carregar perguntas
-perguntas = carregar_resultados()
-
-# Função para gerar um hash do ID do usuário (para garantir anonimato)
-def gerar_hash_id(user_id):
-    return hashlib.sha256(user_id.encode()).hexdigest()
-
-# Criando o app Flask
-app = Flask(__name__)
-
-# Página inicial
-@app.route('/')
-def home():
-    return render_template('interface.html')
-
-# Rota para obter os resultados
-@app.route('/results', methods=['GET'])
-def get_results():
-    return jsonify({'perguntas': perguntas})
-
-# Rota para definir uma nova questão
-@app.route('/question', methods=['POST'])
-def set_question():
-    data = request.json
-    question = data.get('question')
-    if question:
-        nova_pergunta = {
-            'question': question,
-            'results': votos.copy()
+class ServidorVotacao:
+    def __init__(self):
+        self.votos = self.carregar_votos()
+        self.host = '0.0.0.0'
+        self.port = 5000
+        self.socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        
+    def carregar_votos(self):
+        """Carrega os votos existentes ou cria um novo arquivo"""
+        if os.path.exists(ARQUIVO_VOTOS):
+            with open(ARQUIVO_VOTOS, 'r') as f:
+                return json.load(f)
+        return {
+            'total': {'a_favor': 0, 'contra': 0, 'abstencao': 0},
+            'historico': []
         }
-        perguntas.append(nova_pergunta)
-        salvar_resultados()
-        return jsonify({'message': 'Nova questão definida com sucesso!'})
-    return jsonify({'error': 'Questão inválida.'}), 400
+    
+    def salvar_votos(self):
+        """Salva os votos no arquivo JSON"""
+        with open(ARQUIVO_VOTOS, 'w') as f:
+            json.dump(self.votos, f, indent=2, ensure_ascii=False)
+    
+    def processar_voto(self, voto, endereco):
+        """Registra um novo voto e atualiza o JSON"""
+        voto = voto.lower()
+        timestamp = datetime.now().isoformat()
+        
+        # Mapeia as variações de votos
+        if voto in ['sim', 's', 'a favor', 'afavor']:
+            tipo = 'a_favor'
+        elif voto in ['nao', 'n', 'não', 'contra']:
+            tipo = 'contra'
+        elif voto in ['abster', 'abs', 'abstencao', 'abstenção']:
+            tipo = 'abstencao'
+        else:
+            return False  # Voto inválido
+        
+        # Atualiza totais
+        self.votos['total'][tipo] += 1
+        
+        # Adiciona ao histórico
+        self.votos['historico'].append({
+            'tipo': tipo,
+            'endereco': f"{endereco[0]}:{endereco[1]}",
+            'timestamp': timestamp,
+            'voto_original': voto
+        })
+        
+        self.salvar_votos()
+        return True
+    
+    def iniciar(self):
+        """Inicia o servidor de votação"""
+        self.socket.bind((self.host, self.port))
+        print(f"✅ Servidor ativo em {self.host}:{self.port}")
+        print("📊 Aguardando votos... (Ctrl+C para encerrar)")
+        
+        try:
+            while True:
+                data, addr = self.socket.recvfrom(1024)
+                voto = data.decode().strip()
+                
+                if self.processar_voto(voto, addr):
+                    print(f"🗳️ Voto recebido de {addr}: {voto.upper()}")
+                    print(f"📊 Totais: {self.votos['total']}")
+                else:
+                    print(f"⚠️ Voto inválido de {addr}: {voto}")
+                
+        except KeyboardInterrupt:
+            print("\n🛑 Encerrando servidor...")
+        finally:
+            self.socket.close()
+            print("💾 Dados salvos em votos.json")
 
-# Rota para registrar um voto
-@app.route('/vote', methods=['POST'])
-def vote():
-    data = request.json
-    user_id = data.get('user_id')
-    vote = data.get('vote')
-
-    # Gerar hash do ID do usuário para anonimizar
-    user_hash = gerar_hash_id(user_id) #criptografia SHA-256
-
-    if user_hash in votantes:
-        return jsonify({'error': 'Você já votou.'}), 400
-
-    if vote in votos:
-        votos[vote] += 1
-        votantes.add(user_hash)  # Registrar que o usuário votou
-
-        # Atualiza os resultados da última pergunta
-        if perguntas:
-            pergunta_atual = perguntas[-1]
-            pergunta_atual['results'] = votos.copy()
-            salvar_resultados()
-
-        return jsonify({'message': 'Voto registrado com sucesso!'})
-    return jsonify({'error': 'Opção de voto inválida.'}), 400
-
-# Iniciar o servidor HTTP
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=HTTP_PORT)
+    servidor = ServidorVotacao()
+    servidor.iniciar()
