@@ -7,7 +7,7 @@ from cryptography.fernet import Fernet  # Para criptografia
 
 # ===== CONFIGURAÇÕES =====
 ARQUIVO_VOTOS = "votos.json"
-CHAVE_CRIPTOGRAFIA = "chave_cripto.key"  # Arquivo com a chave AES
+CHAVE_CRIPTOGRAFIA = "chave_cripto.key"  # Arquivo com a chave AES ...
 
 # ===== CRIPTOGRAFIA =====
 class Criptografia:
