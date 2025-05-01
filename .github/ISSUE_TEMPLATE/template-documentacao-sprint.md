@@ -1,9 +1,9 @@
 ---
 name: Template Documentacao Sprint
 about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
+title: Documentação Sprint-
+labels: documentation
+assignees: AndreLivio, daviaraujobr, enzo-fb, GiovanniMateus, LiviaYasmin, rsribeiro1
 
 ---
 
