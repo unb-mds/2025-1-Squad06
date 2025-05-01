@@ -36,7 +36,7 @@ Revisar e planejar
   - Utilizar o teste do Davi e refazer visando o Flutter *(Davi e Enzo)*
   - Utilização do JSON *(André)*
   - Ver o que precisa ser entregue na Release 1 *(Renan)*
-  - Finalizar documentação de Requisitos *(Giovanni)*
+  - Atualizar documentação de Requisitos e fazer documentação de arquitetura de software *(Giovanni)*
 
 **OBSERVAÇÃO:** Tivemos problemas em definir tarefas para os restantes dos participantes e vamos conversar melhor com a professora.
 
