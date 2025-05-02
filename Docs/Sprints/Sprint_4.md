@@ -1,5 +1,5 @@
 # SPRINT - 4
-# Relacionado à issue: [#23](https://github.com/unb-mds/2025-1-Squad06/issues/23)
+# ISSUE: [#23](https://github.com/unb-mds/2025-1-Squad06/issues/23)
 
 Período: 28/04/2025 a 04/05/2025
 
