@@ -116,3 +116,9 @@ Ao criar uma arquitetura é necessário estar plenamente ciente dos Requisitos d
 - [Arquitetura de Software: Monolítica x SOA x Microsserviços - APS08](https://www.youtube.com/watch?v=suZfVAk7hco)
 - [Arquitetura de Software](https://www.youtube.com/playlist?list=PLX0VJrazYICCC2a_Ab-sZwLn_LIO8gc4T)
 - [Intro to Software Architecture | Overview, Examples, and Diagrams](https://www.youtube.com/watch?v=k3hKLd7vYZ8&ab_channel=FaradayAcademy)
+
+----
+## **Nosso Documento de Arquitetura de Software**
+
+-Após discussões sobre organização em algumas Sprints, optamos em usar o modelo MVC (Model-View-Controller)
+-O documento de arquitetura se encontra nesse link do Miro, em que também está presente os documentos de requisitos: [Miro](https://miro.com/welcomeonboard/OUI5Y216MWpMVWo1ZzBZaCsxd2FYbEFVY2FLT25jc1F4TE52ZVFidEErM3ZjYnpSc0NCQXBHcFRzTnlmTkgxcjZNaExBS2FmM2V3UWRTOFA4TGpmMVZoRUJpL0U5U3FwaDI5eXYrTkVQYVNwcHg3M1lBdjlzdHFDblR0K0pTaUdNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=475541920280)
