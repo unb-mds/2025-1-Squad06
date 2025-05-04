@@ -64,4 +64,4 @@
 ---
 
 ## 6. Documentação de requisitos
-- [Link do Miro para documentação de requisitos](https://miro.com/app/board/uXjVIJOVs_Y=/?utm_source=notification&utm_medium=email&utm_campaign=daily-updates&utm_content=view-activity&lid=8hnc0q4xt65k)
+- [Link do Miro para documentação de requisitos](https://miro.com/app/board/uXjVIJOVs_Y=/?share_link_id=65146293093)
