@@ -3,7 +3,7 @@
 ## **Nosso Documento de Arquitetura de Software**
 
 -Após discussões sobre organização em algumas Sprints, optamos em usar o modelo MVC (Model-View-Controller)
--O documento de arquitetura se encontra nesse link do Miro, em que também está presente os documentos de requisitos: [Miro](https://miro.com/welcomeonboard/OUI5Y216MWpMVWo1ZzBZaCsxd2FYbEFVY2FLT25jc1F4TE52ZVFidEErM3ZjYnpSc0NCQXBHcFRzTnlmTkgxcjZNaExBS2FmM2V3UWRTOFA4TGpmMVZoRUJpL0U5U3FwaDI5eXYrTkVQYVNwcHg3M1lBdjlzdHFDblR0K0pTaUdNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=475541920280)
+-O documento de arquitetura se encontra nesse link do Miro, em que também está presente os documentos de requisitos: [Miro](https://miro.com/app/board/uXjVIJOVs_Y=/?share_link_id=65146293093)
 
 ---
 
