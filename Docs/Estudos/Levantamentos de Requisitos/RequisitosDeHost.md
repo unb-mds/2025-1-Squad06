@@ -5,19 +5,6 @@
 Hospedar uma aplicação de votação local que funcione em redes internas, com comunicação via protocolo **UDP**, sem dependência de internet.
 
 ---
-## 🖥️ Requisitos Mínimos de Hardware
-
-| Recurso       | Mínimo              | Ideal                 |
-|---------------|---------------------|------------------------|
-| CPU           | 1 núcleo (1.2 GHz)   | 2 núcleos (2.0+ GHz)   |
-| RAM           | 1 GB                | 2–4 GB                |
-| Armazenamento | 512 MB (SSD)        | 2 GB (para logs e backups) |
-| Rede          | Interface Ethernet ou Wi-Fi local |
-
-
-> ⚠️ O host pode ser um notebook, mini PC, Raspberry Pi ou servidor local.
-
----
 
 ## 💻 Requisitos de Software
 
@@ -71,14 +58,6 @@ Hospedar uma aplicação de votação local que funcione em redes internas, com 
 **Tecnologias sugeridas:**  
 - Python (`socket.sendto` com `broadcast`)  
 - Node.js (`dgram` com `socket.setBroadcast(true)`)
-
----
-
-### 🔹 Recebimento automático da pergunta nos dispositivos CLIENTES  
-**Tecnologias sugeridas:**  
-- Python (`socket.recvfrom`)  
-- Node.js (`dgram.on('message')`)  
-- Interface: React Native, Electron, PyQt5
 
 ---
 
