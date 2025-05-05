@@ -7,11 +7,13 @@
 ## 1. Requisitos Funcionais (RF)
 
 -  O sistema deve permitir que um HOST defina e envie perguntas de votação.
--  Os CLIENTES devem receber as perguntas automaticamente via rede local (UDP Broadcast).
+-  O sistema deve permitir que um HOST defina o tempo de votação.
+-  Os CLIENTES devem receber as perguntas via rede local (UDP Broadcast).
 -  Os CLIENTES devem exibir a pergunta para o usuário escolher uma das opções: A Favor, Contra, Abstenção.
 -  O CLIENTE deve enviar o voto ao HOST via UDP unicast.
 -  O HOST deve contabilizar votos recebidos por tipo.
 -  O HOST deve exibir os resultados em tempo real.
+-  O HOST deve compartilhar o resultado com os CLIENTES.
 -  O HOST deve encerrar a votação manualmente (por comando ou tecla).
 -  O sistema deve exibir os resultados finais com total por opção.
 -  O sistema deve permitir múltiplas rodadas de votação.
@@ -58,7 +60,7 @@
 
 - Criptografia das mensagens para maior segurança.
 - Identificação por nome ou ID do votante.
-- Armazenamento dos resultados em banco de dados local (SQLite).
+- Armazenamento dos resultados em banco de dados local (JSON).
 - Adaptação para interface web com Flask (permite uso em celulares via navegador).
 
 ---
