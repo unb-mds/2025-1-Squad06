@@ -4,13 +4,19 @@
 
 ---
 
-### 🔹 Receber automaticamente a pergunta enviada pelo HOST **(importante)**  
+### 🔹 Receber a pergunta e cronômetro enviados pelo HOST **(importante)**  
 **Descrição:**  
-Ao iniciar o aplicativo, o dispositivo do votante deve escutar automaticamente a rede local e exibir a pergunta assim que ela for enviada.  
+Ao iniciar o aplicativo, o dispositivo do votante deve escutar automaticamente a rede local e exibir a pergunta e cronômetro assim que forem enviados pelo host.  
 
 **Tecnologias sugeridas:**  
 - Backend: Python (`socket.recvfrom`), Node.js (`dgram`)  
 - Interface: React Native, Flutter, Electron, Tkinter
+
+---
+
+### 🔹 Receber aviso quanto ao tempo, antes da votação **(importante)**  
+**Descrição:**  
+Ao entrar como vontante, antes da votação efetivamente começar, o votante deve receber um aviso sobre o cronômetro, para evitar que os usuários percam o prazo da votação. 
 
 ---
 
@@ -39,7 +45,7 @@ O voto deve ser transmitido ao IP do HOST usando UDP unicast com confirmação v
 
 ### 🔹 Garantia de privacidade do voto  
 **Descrição:**  
-O voto deve ser transmitido sem expor o conteúdo ou identidade do votante a outros participantes.  
+O voto deve ser transmitido sem expor a identidade do votante a outros participantes.  
 
 **Tecnologias sugeridas:**  
 - Transmissão sem metadados pessoais  
@@ -49,7 +55,8 @@ O voto deve ser transmitido sem expor o conteúdo ou identidade do votante a out
 
 ### 🔹 Feedback visual sobre status do voto  
 **Descrição:**  
-Após o envio, o sistema deve informar o usuário que o voto foi recebido ou está aguardando confirmação.  
+Após o envio, o sistema deve informar o usuário se o voto foi recebido com sucesso ou não, após confirmação do votante.
+Caso não tenha sucesso ao votar, pode tentar novamente
 
 **Tecnologias sugeridas:**  
 - Mensagem de status na interface  
@@ -57,7 +64,7 @@ Após o envio, o sistema deve informar o usuário que o voto foi recebido ou est
 
 ---
 
-### 🔹 Reconexão automática caso perca a pergunta  
+### 🔹 Reconexão automática caso a votação tenha começado  
 **Descrição:**  
 Se o dispositivo entrar na rede após o início da votação, ele deve tentar solicitar a pergunta ao HOST automaticamente.  
 
