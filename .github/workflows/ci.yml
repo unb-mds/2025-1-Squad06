@@ -1,34 +1,61 @@
-name: Deploy MkDocs
+name: Deploy Docs
 
 on:
   push:
     branches:
-      - paginaWeb  # Rodar em qualquer push para a branch 'paginaWeb'
+      - paginaWeb
+    paths:
+      - 'Docs/**'
+      - 'mkdocs.yml'
+
+permissions:
+  contents: write
 
 jobs:
-  deploy:
-    runs-on: ${{ matrix.os }}  # Rodar em Ubuntu, Windows ou MacOS
-
+  docs:
+    name: mkdocs deploy
+    runs-on: ubuntu-latest
     strategy:
+      max-parallel: 4
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]  # Múltiplos sistemas operacionais
+        python-version: ["3.11"]
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
 
-      - name: Install dependencies
-        run: |
-          python -m venv venv  # Cria um ambiente virtual
-          source venv/bin/activate  # Ativa o ambiente virtual no Ubuntu
-          pip install -r requirements.txt  # Instala dependências
+    - name: Using cache to MkDocs
+      uses: actions/cache@v3
+      with:
+        key: mkdocs-material-${{ env.cache_id }}
+        path: .cache
+        restore-keys: |
+          mkdocs-material-
 
-      - name: Build and Deploy MkDocs
-        run: |
-          source venv/bin/activate  # Ativa o ambiente virtual no Ubuntu
-          mkdocs gh-deploy --force --branch gh-pages  # Deploy para o GitHub Pages
+    - run: pip install mkdocs-material 
+
+    - name: Deploy Docs
+      run: mkdocs gh-deploy --force
+
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: pip-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          pip-${{ runner.os }}-
+    - name: Cache MkDocs build
+      uses: actions/cache@v3
+      with:
+        key: mkdocs-${{ hashFiles('mkdocs.yml', 'docs/**') }}
+        path: .cache
+        restore-keys: |
+          mkdocs-
+    - run: pip install -r requirements.txt
