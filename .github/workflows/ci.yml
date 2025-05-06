@@ -1,61 +1,26 @@
-name: Deploy Docs
+name: CI
 
-on:
-  push:
-    branches:
-      - paginaWeb
-    paths:
-      - 'Docs/**'
-      - 'mkdocs.yml'
-
-permissions:
-  contents: write
+on: [push, pull_request]  # ← isso é essencial!
 
 jobs:
-  docs:
-    name: mkdocs deploy
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: ["3.11"]
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout do código
+        uses: actions/checkout@v3
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
-      with:
-        python-version: ${{ matrix.python-version }}
-    
-    - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Using cache to MkDocs
-      uses: actions/cache@v3
-      with:
-        key: mkdocs-material-${{ env.cache_id }}
-        path: .cache
-        restore-keys: |
-          mkdocs-material-
+      - name: Instalar dependências
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
 
-    - run: pip install mkdocs-material 
-
-    - name: Deploy Docs
-      run: mkdocs gh-deploy --force
-
-    - name: Cache pip dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/pip
-        key: pip-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
-        restore-keys: |
-          pip-${{ runner.os }}-
-    - name: Cache MkDocs build
-      uses: actions/cache@v3
-      with:
-        key: mkdocs-${{ hashFiles('mkdocs.yml', 'docs/**') }}
-        path: .cache
-        restore-keys: |
-          mkdocs-
-    - run: pip install -r requirements.txt
+      - name: Rodar testes (exemplo)
+        run: |
+          echo "Aqui você pode rodar seus testes"
