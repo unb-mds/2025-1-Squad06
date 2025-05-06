@@ -2,7 +2,8 @@ name: ci
 on:
   push:
     branches:
-      - paginaWeb
+      - master 
+      - main
 permissions:
   contents: write
 jobs:

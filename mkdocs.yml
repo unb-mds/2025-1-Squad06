@@ -1,19 +1,19 @@
 site_name: Eletta
-repo_url:  https://unb-mds.github.io/2025-1-Squad06/
-
+site_url: https://unb-mds.github.io/2025-1-Squad06/
+docs_dir: Docs
 nav:
   - 🏡 Home: index.md
   - 🗂️ Arquitetura de Software: Arquitetura.md
-  - 🛠️ Protótipo: Protótipo.md
+  - 🛠️ Protótipo: Prototipo.md
   - 🧩 Sprints: 
-      - Sprint 0: Sprints/Sprint-0.md
-      - Sprint 1: Sprints/Sprint-1.md
-      - Sprint 2: Sprints/Sprint-2.md
-      - Sprint 3: Sprints/Sprint-3.md
-      - Sprint 4: Sprints/Sprint-4.md
+      - Sprint 0: Sprints/Sprint_0.md
+      - Sprint 1: Sprints/Sprint_1.md
+      - Sprint 2: Sprints/Sprint_2.md
+      - Sprint 3: Sprints/Sprint_3.md
+      - Sprint 4: Sprints/Sprint_4.md
   - 🗺️ Story Map e User Flow: 
-      - Story Map: Story Map.md
-      - User Flow: User Flow.md
+      - Story Map: StoryMap.md
+      - User Flow: UserFlow.md
 
 
 
@@ -77,4 +77,4 @@ extra:
     - icon: simple/miro
       link: https://miro.com/app/board/uXjVIJOVs_Y=/
 
-copyright: Copyright © 2025 Eletta
+copyright: © 2025 Eletta
