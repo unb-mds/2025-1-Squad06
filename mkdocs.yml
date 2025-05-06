@@ -1,0 +1,78 @@
+docs_dir: Docs
+site_name: Eletta
+site_url: https://example.com
+
+nav:
+  - 🏡 Home: docs/index.md
+  - 🗂️ Arquitetura de Software: docs/Arquitetura.md
+  - 🛠️ Protótipo: docs/Prototipo.md
+  - 🧩 Sprints: 
+      - Sprint 0: Sprints/Sprint_0.md
+      - Sprint 1: Sprints/Sprint_1.md
+      - Sprint 2: Sprints/Sprint_2.md
+      - Sprint 3: Sprints/Sprint_3.md
+      - Sprint 4: Sprints/Sprint_4.md
+  - 🗺️ Story Map e User Flow: 
+      - Story Map: docs/StoryMap.md
+      - User Flow: docs/UserFlow.md
+
+theme:
+  name: material
+  font:
+    text: Merriweather Sans
+    code: Red Hat Mono
+  logo: docs/assets/images/logo.png
+  favicon: docs/assets/icon/favicon.ico
+  features:
+    - navigation.path
+    - navigation.tabs
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      primary: teal
+      accent: deep purple
+
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: teal
+      accent: deep orange
+
+markdown_extensions: 
+  - attr_list
+  - admonition
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: timeago
+      fallback_to_build_date: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/unb-mds/2025-1-Squad06
+    - icon: simple/miro
+      link: https://miro.com/app/board/uXjVIJOVs_Y=/
+
+
+copyright: Copyright © 2025 Eletta
