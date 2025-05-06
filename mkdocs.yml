@@ -1,6 +1,6 @@
 docs_dir: Docs
 site_name: Eletta
-site_url: https://example.com
+site_url: https://unb-mds.github.io/2025-1-Squad06/
 
 nav:
   - 🏡 Home: docs/index.md
