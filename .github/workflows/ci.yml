@@ -1,0 +1,34 @@
+name: Deploy MkDocs
+
+on:
+  push:
+    branches:
+      - paginaWeb  # Rodar em qualquer push para a branch 'paginaWeb'
+
+jobs:
+  deploy:
+    runs-on: ${{ matrix.os }}  # Rodar em Ubuntu, Windows ou MacOS
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]  # Múltiplos sistemas operacionais
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv  # Cria um ambiente virtual
+          source venv/bin/activate  # Ativa o ambiente virtual no Ubuntu
+          pip install -r requirements.txt  # Instala dependências
+
+      - name: Build and Deploy MkDocs
+        run: |
+          source venv/bin/activate  # Ativa o ambiente virtual no Ubuntu
+          mkdocs gh-deploy --force --branch gh-pages  # Deploy para o GitHub Pages
