@@ -27,7 +27,7 @@ Informe quem está alocado para essa tarefa.
 ## 🗂️ Issue Relacionada
 Se esta tarefa está ligada a outra issue ou épico, coloque o link ou referência aqui.
 
-Exemplo: Relacionado à issue #12
+Exemplo: Relacionado à issue 
 
 ## 🕒 Sprint
 Informe a sprint que esta issue está alocada.
