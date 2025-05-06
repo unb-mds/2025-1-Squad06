@@ -1,26 +1,42 @@
-name: CI
+name: ci
 
-on: [push, pull_request]  # ← isso é essencial!
+on:
+  push:
+    branches:
+      - paginaWeb
+    paths:
+      - 'Docs/**'
+      - 'mkdocs.yml'
+      - 'requirements.txt'
+permissions:
+  contents: write
 
 jobs:
-  build:
+  docs:
     runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        python-version: ["3.11"]
 
     steps:
-      - name: Checkout do código
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+    - name: Configure Git Credentials
+      run: |
+        git config --global user.name "GitHub Action"
+        git config --global user.email "action@example.com"
+    - uses: actions/setup-python@v5
+      with:
+        python-version: 3.x
+    - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+    - uses: actions/cache@v4
+      with:
+        key: mkdocs-material-${{ env.cache_id }}  
+        path: .cache
+        restore-keys: |
+          mkdocs-material-
+    - run: pip install -r requirements.txt
+    - run: pip install mkdocs-material
+    - run: mkdocs gh-deploy --force
 
-      - name: Configurar Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
 
-      - name: Instalar dependências
-        run: |
-          python -m venv venv
-          source venv/bin/activate
-          pip install -r requirements.txt
-
-      - name: Rodar testes (exemplo)
-        run: |
-          echo "Aqui você pode rodar seus testes"
