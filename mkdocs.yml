@@ -1,35 +1,37 @@
-docs_dir: Docs
 site_name: Eletta
-site_url: https://unb-mds.github.io/2025-1-Squad06/
+repo_url:  https://unb-mds.github.io/2025-1-Squad06/
 
 nav:
-  - 🏡 Home: docs/index.md
-  - 🗂️ Arquitetura de Software: docs/Arquitetura.md
-  - 🛠️ Protótipo: docs/Prototipo.md
+  - 🏡 Home: index.md
+  - 🗂️ Arquitetura de Software: Arquitetura.md
+  - 🛠️ Protótipo: Protótipo.md
   - 🧩 Sprints: 
-      - Sprint 0: Sprints/Sprint_0.md
-      - Sprint 1: Sprints/Sprint_1.md
-      - Sprint 2: Sprints/Sprint_2.md
-      - Sprint 3: Sprints/Sprint_3.md
-      - Sprint 4: Sprints/Sprint_4.md
+      - Sprint 0: Sprints/Sprint-0.md
+      - Sprint 1: Sprints/Sprint-1.md
+      - Sprint 2: Sprints/Sprint-2.md
+      - Sprint 3: Sprints/Sprint-3.md
+      - Sprint 4: Sprints/Sprint-4.md
   - 🗺️ Story Map e User Flow: 
-      - Story Map: docs/StoryMap.md
-      - User Flow: docs/UserFlow.md
+      - Story Map: Story Map.md
+      - User Flow: User Flow.md
+
+
 
 theme:
   name: material
   font:
     text: Merriweather Sans
     code: Red Hat Mono
-  logo: docs/assets/images/logo.png
-  favicon: docs/assets/icon/favicon.ico
+  logo: assets/images/logo.png
+  favicon: assets/icon/favicon.ico
   features:
     - navigation.path
-    - navigation.tabs
-    - navigation.top
     - toc.integrate
+    - navigation.top
     - search.suggest
-    - search.highlight
+  hide:
+    - navigation
+    - toc
   palette:
     - scheme: slate
       toggle:
@@ -45,27 +47,28 @@ theme:
       primary: teal
       accent: deep orange
 
+
+
+
+
+
+
 markdown_extensions: 
   - attr_list
-  - admonition
-  - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji 
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.tabbed:
-      alternate_style: true
+      alternate_style: true 
+  - admonition
+  - pymdownx.details
 
-plugins:
-  - search
-  - git-revision-date-localized:
-      type: timeago
-      fallback_to_build_date: true
 
 extra:
   social:
@@ -73,6 +76,5 @@ extra:
       link: https://github.com/unb-mds/2025-1-Squad06
     - icon: simple/miro
       link: https://miro.com/app/board/uXjVIJOVs_Y=/
-
 
 copyright: Copyright © 2025 Eletta
