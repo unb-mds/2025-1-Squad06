@@ -1,9 +1,10 @@
 import flet as ft
 from servidor import servidor
 from servidor import cliente
+from views import votante, host
 
 
-# ----------------- views -----------------
+# ----------------- views padrões -----------------
 def pagina_inicial(page: ft.Page, controlador: 'Controlador') -> ft.View:
     conteudo_da_pagina = [
         ft.Row(
@@ -16,69 +17,11 @@ def pagina_inicial(page: ft.Page, controlador: 'Controlador') -> ft.View:
     ]
     return ft.View('/', controls=conteudo_da_pagina, vertical_alignment = ft.MainAxisAlignment.CENTER, horizontal_alignment = ft.CrossAxisAlignment.CENTER)
 
-def pagina_de_espera(page: ft.Page) -> ft.View:
-    conteudo_da_pagina = [
-            ft.Text("Por favor Aguarde")
-    ]
-    return ft.View('/espera', controls=conteudo_da_pagina, vertical_alignment = ft.MainAxisAlignment.CENTER, horizontal_alignment = ft.CrossAxisAlignment.CENTER)
-
-def pagina_de_espera_votantes(page: ft.Page, controlador = 'Controlador') -> ft.View:
-    conteudo_da_pagina = [
-        ft.ElevatedButton("Encerrar espera de votantes", on_click=controlador.encerrar_espera_de_votantes)
-    ]
-    return ft.View('/espera_votantes', controls=conteudo_da_pagina, vertical_alignment = ft.MainAxisAlignment.CENTER, horizontal_alignment = ft.CrossAxisAlignment.CENTER)
-
-def pagina_de_espera_votos(page: ft.Page, controlador = 'Controlador') -> ft.View:
-    conteudo_da_pagina = [
-        ft.ElevatedButton("Encerrar espera por votos", on_click=controlador.encerrar_espera_de_votos)
-    ]
-    return ft.View('/espera_votos', controls=conteudo_da_pagina, vertical_alignment = ft.MainAxisAlignment.CENTER, horizontal_alignment = ft.CrossAxisAlignment.CENTER)
-
-def pagina_de_votacao(page: ft.Page, controlador: 'Controlador') -> ft.View:
-    pauta = controlador.mensagem
-    conteudo_da_pagina = [
-        ft.Column(
-            [
-                ft.Text(value=pauta),
-                ft.ElevatedButton('A favor', on_click=controlador.votar, data=2),
-                ft.ElevatedButton('Contra', on_click=controlador.votar, data=1),
-                ft.ElevatedButton('Abster-se', on_click=controlador.votar, data=0)
-            ],
-            alignment = ft.MainAxisAlignment.CENTER
-        ),
-    ]
-    return ft.View('/votacao', controls=conteudo_da_pagina, vertical_alignment = ft.MainAxisAlignment.CENTER, horizontal_alignment = ft.CrossAxisAlignment.CENTER)
-
 def pagina_do_resultado(page: ft.Page, resultado: str) -> ft.View:
     conteudo_da_pagina = [
         ft.Text(value=resultado)
     ]
     return ft.View('/resultado', controls=conteudo_da_pagina, vertical_alignment = ft.MainAxisAlignment.CENTER, horizontal_alignment = ft.CrossAxisAlignment.CENTER)
-
-def pagina_de_criacao_de_pauta(page: ft.Page, controlador = 'Controlador') -> ft.View:
-    texto = ft.TextField(label='digite a pauta que será votada')
-    conteudo_da_pagina = [
-        ft.Row(
-            [
-                texto,
-                ft.ElevatedButton('enviar pauta', on_click=controlador.enviar_pauta, data=texto)
-            ],
-            alignment = ft.MainAxisAlignment.CENTER
-        ),
-    ]
-    return ft.View('/criacao_de_pauta', controls=conteudo_da_pagina, vertical_alignment = ft.MainAxisAlignment.CENTER, horizontal_alignment = ft.CrossAxisAlignment.CENTER)
-
-def aguardar_votantes(page: ft.Page) -> ft.View:
-    conteudo_da_pagina = [
-        ft.Row(
-            [
-                ft.TextField(label='digite a pauta que será votada'),
-                ft.ElevatedButton('enviar pauta')
-            ],
-            alignment = ft.MainAxisAlignment.CENTER
-        ),
-    ]
-    return ft.View('/criacao_de_pauta', controls=conteudo_da_pagina, vertical_alignment = ft.MainAxisAlignment.CENTER, horizontal_alignment = ft.CrossAxisAlignment.CENTER)
 
 # ---------- logica -------------
 
@@ -149,22 +92,22 @@ def main(page: ft.Page) -> None:
             page.views.append(pagina_inicial(page, controlador))
         
         elif page.route == '/espera':
-            page.views.append(pagina_de_espera(page))
-
-        elif page.route == '/espera_votantes':
-            page.views.append(pagina_de_espera_votantes(page, controlador))
-
-        elif page.route == '/espera_votos':
-            page.views.append(pagina_de_espera_votos(page, controlador))
+            page.views.append(votante.pagina_de_espera(page))
         
         elif page.route == '/votacao':
-            page.views.append(pagina_de_votacao(page, controlador))
+            page.views.append(votante.pagina_de_votacao(page, controlador))
+
+        elif page.route == '/espera_votantes':
+            page.views.append(host.pagina_de_espera_votantes(page, controlador))
+
+        elif page.route == '/criacao_de_pauta':
+            page.views.append(host.pagina_de_criacao_de_pauta(e.page, controlador))
+
+        elif page.route == '/espera_votos':
+            page.views.append(host.pagina_de_espera_votos(page, controlador))
 
         elif page.route == '/resultado':
             page.views.append(pagina_do_resultado(page, controlador.mensagem))
-
-        elif page.route == '/criacao_de_pauta':
-            page.views.append(pagina_de_criacao_de_pauta(e.page, controlador))
 
         page.update()
         

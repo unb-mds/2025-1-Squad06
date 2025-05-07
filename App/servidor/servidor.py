@@ -1,6 +1,8 @@
 import socket
 import threading
 from servidor.Data_Base.DB import Banco_de_Dados
+from servidor.Data_Base.DB import Banco_de_Dados
+from servidor.Data_Base.DB import Banco_de_Dados
 
 # ----- inicialização do servidor -----
 def virar_host() -> socket.socket:
