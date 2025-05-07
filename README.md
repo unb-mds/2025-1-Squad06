@@ -2,6 +2,16 @@
 
 **Eletta** é um aplicativo multiplataforma de votações presenciais que utiliza comunicação via **UDP** para garantir rapidez e simplicidade. Ideal para eventos locais, reuniões e assembleias onde é necessário registrar votos rapidamente. Este projeto faz parte da disciplina Métodos de Desenvolvimento de Software, da FCTE, ministrada pela professora [Carla Rocha](https://github.com/RochaCarla).
 
+## 📚 Sumário
+
+- [👥 Equipe](#-equipe)
+- [🚀 Tecnologias](#-tecnologias)
+- [📦 Instalação](#-instalação)
+- [⚙️ Executando](#executando)
+- [🤝 Contribuindo](#-contribuindo)
+- [🔗 Links importantes](#-links-importantes)
+- [📄 Licença](#-licença)
+
 ## 👥 Equipe
 
 | <img src="https://avatars.githubusercontent.com/u/191532479?v=4" width="150">  <br> [**Giovanni Mateus**](https://github.com/GiovanniMateus) | <img src="https://avatars.githubusercontent.com/u/84422077?v=4" width="150">  <br> [**Davi de Araújo**](https://github.com/daviaraujobr) | <img src="https://avatars.githubusercontent.com/u/198164711?v=4" width="150">  <br> [**Enzo Borges**](https://github.com/enzo-fb) |
@@ -47,8 +57,8 @@ Contribuições são bem-vindas! Para contribuir:
 - Abra um Pull Request para avaliação
 
 ## 🔗Links importantes
-Mais detalhes sobre o desenvolvimento podem ser encontrados [aqui](https://unb-mds.github.io/2025-1-Eletta/).
-Story Map e User Flow podem ser encontrados [aqui](https://miro.com/app/board/uXjVIJOVs_Y=/).
+- Mais detalhes sobre o desenvolvimento podem ser encontrados [aqui](https://unb-mds.github.io/2025-1-Eletta/).
+- Story Map e User Flow podem ser encontrados [aqui](https://miro.com/app/board/uXjVIJOVs_Y=/).
 ## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](https://github.com/unb-mds/2025-1-Eletta/blob/main/LICENSE) para mais detalhes.
