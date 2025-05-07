@@ -56,7 +56,7 @@ Contribuições são bem-vindas! Para contribuir:
 - Push na sua branch   
 - Abra um Pull Request para avaliação
 
-## 🔗Links importantes
+## 🔗 Links importantes
 - Mais detalhes sobre o desenvolvimento podem ser encontrados [aqui](https://unb-mds.github.io/2025-1-Eletta/).
 - Story Map e User Flow podem ser encontrados [aqui](https://miro.com/app/board/uXjVIJOVs_Y=/).
 ## 📄 Licença
