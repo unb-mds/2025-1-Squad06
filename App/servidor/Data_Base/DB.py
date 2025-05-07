@@ -38,5 +38,5 @@ class Banco_de_Dados:
             self.dados['votantes'][user_id]['pautas votadas'].append(pauta)
         
     def serializar_dados(self):
-        with open('Data_Base/dados.json', 'w') as banco_de_dados:
+        with open('servidor/Data_Base/dados.json', 'w') as banco_de_dados:
             json.dump(self.dados, banco_de_dados, ensure_ascii=False, indent=2)

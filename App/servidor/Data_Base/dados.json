@@ -1,0 +1,22 @@
+{
+  "votantes": {
+    "49427": {
+      "PORT": "127.0.0.1",
+      "votos contra": [],
+      "votos a favor": [
+        "asdfjklç"
+      ],
+      "votos nulo": [],
+      "pautas votadas": [
+        "asdfjklç"
+      ]
+    }
+  },
+  "pautas": {
+    "asdfjklç": {
+      "qtd de votos a favor": 1,
+      "qtd de votos contra": 0,
+      "qtd de votos anulados": 0
+    }
+  }
+}
