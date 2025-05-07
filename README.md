@@ -46,8 +46,9 @@ Contribuições são bem-vindas! Para contribuir:
 - Push na sua branch   
 - Abra um Pull Request para avaliação
 
-## 📜Documentação
-O restante da documentação do projeto pode ser consultado [aqui](https://unb-mds.github.io/2025-1-Eletta/).
+## 🔗Links importantes
+Mais detalhes sobre o desenvolvimento podem ser encontrados [aqui](https://unb-mds.github.io/2025-1-Eletta/).
+Story Map e User Flow podem ser encontrados [aqui](https://miro.com/app/board/uXjVIJOVs_Y=/).
 ## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](https://github.com/unb-mds/2025-1-Eletta/blob/main/LICENSE) para mais detalhes.
