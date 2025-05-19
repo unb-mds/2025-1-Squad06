@@ -1,6 +1,5 @@
 import socket
-server_addr = ("0.0.0.0", 12345)
-
+server_addr = ("127.0.0.1", 5555)
 def virar_votante() -> socket.socket:
     votante = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     message = "joined"

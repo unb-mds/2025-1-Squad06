@@ -1,17 +1,15 @@
 import socket
 import threading
 from servidor.Data_Base.DB import Banco_de_Dados
-from servidor.Data_Base.DB import Banco_de_Dados
-from servidor.Data_Base.DB import Banco_de_Dados
 
 # ----- inicialização do servidor -----
 def virar_host() -> socket.socket:
-    UDP_IP = "0.0.0.0"
-    UDP_PORT = 12345
+    BIND_IP = "0.0.0.0"
+    UDP_PORT = 5555
     server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     server.settimeout(1.0)
-    server.bind((UDP_IP, UDP_PORT))
-    print(f"servidor UDP ativo em {UDP_IP}:{UDP_PORT}")
+    server.bind((BIND_IP, UDP_PORT))
+    print(f"servidor UDP ativo na porta {UDP_PORT}")
     return server
 
 # ----- funções -----
