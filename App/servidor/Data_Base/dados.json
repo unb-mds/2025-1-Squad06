@@ -1,0 +1,44 @@
+{
+  "votantes": {
+    "56351": {
+      "PORT": "127.0.0.1",
+      "votos contra": [],
+      "votos a favor": [],
+      "votos nulo": [
+        "vai funcionar?"
+      ],
+      "pautas votadas": [
+        "vai funcionar?"
+      ]
+    },
+    "39584": {
+      "PORT": "127.0.0.1",
+      "votos contra": [],
+      "votos a favor": [
+        "vai funcionar?"
+      ],
+      "votos nulo": [],
+      "pautas votadas": [
+        "vai funcionar?"
+      ]
+    },
+    "58147": {
+      "PORT": "127.0.0.1",
+      "votos contra": [],
+      "votos a favor": [
+        "vai funcionar?"
+      ],
+      "votos nulo": [],
+      "pautas votadas": [
+        "vai funcionar?"
+      ]
+    }
+  },
+  "pautas": {
+    "vai funcionar?": {
+      "qtd de votos a favor": 2,
+      "qtd de votos contra": 0,
+      "qtd de votos anulados": 1
+    }
+  }
+}
